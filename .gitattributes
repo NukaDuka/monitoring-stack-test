@@ -1,0 +1,2 @@
+*.aof filter=lfs diff=lfs merge=lfs -text
+grafana/data[[:space:]]backup/usr-share/bin/grafana-server filter=lfs diff=lfs merge=lfs -text

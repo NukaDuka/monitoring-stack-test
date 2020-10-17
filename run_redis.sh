@@ -1,0 +1,1 @@
+sudo docker-compose -f redis-app/docker-compose.yml up -d --scale replicas=2

@@ -1,0 +1,13 @@
+66500 Gets/sec | Hits: 26922 (40.48%) | Misses: 39578 (59.52%)
+66000 Gets/sec | Hits: 27451 (41.59%) | Misses: 38549 (58.41%)
+76500 Gets/sec | Hits: 32713 (42.76%) | Misses: 43787 (57.24%)
+79750 Gets/sec | Hits: 35094 (44.01%) | Misses: 44656 (55.99%)
+58250 Gets/sec | Hits: 26099 (44.81%) | Misses: 32151 (55.19%)
+48500 Gets/sec | Hits: 21976 (45.31%) | Misses: 26524 (54.69%)
+66000 Gets/sec | Hits: 30314 (45.93%) | Misses: 35686 (54.07%)
+63000 Gets/sec | Hits: 29538 (46.89%) | Misses: 33462 (53.11%)
+58750 Gets/sec | Hits: 27892 (47.48%) | Misses: 30858 (52.52%)
+67750 Gets/sec | Hits: 32932 (48.61%) | Misses: 34818 (51.39%)
+61250 Gets/sec | Hits: 29802 (48.66%) | Misses: 31448 (51.34%)
+68250 Gets/sec | Hits: 32387 (47.45%) | Misses: 35863 (52.55%)
+^C

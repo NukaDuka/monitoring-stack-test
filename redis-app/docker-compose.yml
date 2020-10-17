@@ -1,0 +1,65 @@
+version: "3.8"
+
+services:
+  master:
+    image: redis
+    ports:
+      - 6379-6389:6379
+    command: bash -c "redis-server --appendonly yes"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "/tmp/code/hc.sh"]
+      interval: 1m
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    volumes:  
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/data:/data
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/redis-app/code:/tmp/code
+
+  lru:
+    image: redis
+    ports:
+      - 6379-6389:6379
+    command: bash -c "redis-server"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "/tmp/code/hc.sh"]
+      interval: 1m
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    volumes:
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/lru_data:/data
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/redis-app/code:/tmp/code
+
+  replicas: 
+    image: redis
+    ports:
+      - 6379-6389:6379
+    healthcheck:
+      test: ["CMD", "bash", "-c", "/tmp/code/hc.sh"]
+      interval: 1m
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    volumes:
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/replica_data:/data
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/redis-app/code:/tmp/code
+    command: bash -c "echo 'Waiting for master to start..'; sleep 10; redis-server /data/redis.conf"
+
+  prometheus:
+    image: prom/prometheus
+    ports: 
+      - 9090:9090
+    volumes:
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/prometheus_data/config:/etc/prometheus
+      - /mnt/c/Users/kartik.go/Desktop/Projects/redis/prometheus_data/data:/data
+  
+  redis_exporter:
+    image: nukaduka1/redis-exporter
+    ports:
+      - 9121:9121
+
+  grafana:
+    image: grafana/grafana
+    ports: 
+      - 3001-3020:3000

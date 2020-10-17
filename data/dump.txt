@@ -1,0 +1,8 @@
+60500 Gets/sec | Hits: 16661 (27.54%) | Misses: 43839 (72.46%)
+72750 Gets/sec | Hits: 21132 (29.05%) | Misses: 51618 (70.95%)
+54750 Gets/sec | Hits: 16578 (30.28%) | Misses: 38172 (69.72%)
+55000 Gets/sec | Hits: 17206 (31.28%) | Misses: 37794 (68.72%)
+58000 Gets/sec | Hits: 18869 (32.53%) | Misses: 39131 (67.47%)
+78000 Gets/sec | Hits: 26514 (33.99%) | Misses: 51486 (66.01%)
+77250 Gets/sec | Hits: 27228 (35.25%) | Misses: 50022 (64.75%)
+^C
